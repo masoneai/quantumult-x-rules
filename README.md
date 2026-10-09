@@ -18,6 +18,10 @@
 
 打开 [merge.conf](merge.conf)，将 `[policy]` 和 `[filter_local]` 的内容分别合并到现有同名区段，保留自己的 `[server_remote]`。检查重复规则与 `final` 兜底策略；`节点选择` 策略使用 `CF-域名直连`。
 
+## 界面添加订阅
+
+可直接通过圈 X 的“分流 → 规则资源”添加公开链接。详见[操作截图与步骤](docs/README.md)。图文指南只展示公开资源，不包含私人节点凭据。
+
 ## 远程更新规则
 
 [rules.list](rules.list) 只含原生过滤规则。先从 `merge.conf` 合并 `[policy]` 策略组，再在自己的 `[filter_remote]` 区段加入：
