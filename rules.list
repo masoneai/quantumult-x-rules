@@ -1,17 +1,12 @@
+# Quantumult X 域名优先分流规则；需已有“节点选择”策略
+# 节点入口与明确的内网域名先直连
 host, node.284021.xyz, direct
 host, localhost, direct
 host-suffix, local, direct
-ip-cidr, 127.0.0.0/8, direct
-ip-cidr, 10.0.0.0/8, direct
-ip-cidr, 172.16.0.0/12, direct
-ip-cidr, 192.168.0.0/16, direct
-ip-cidr, 100.64.0.0/10, direct
-ip-cidr, 169.254.0.0/16, direct
-ip-cidr, 224.0.0.0/4, direct
-ip6-cidr, ::1/128, direct
-ip6-cidr, fc00::/7, direct
-ip6-cidr, fe80::/10, direct
-ip6-cidr, ff00::/8, direct
+host-suffix, lan, direct
+host-suffix, home.arpa, direct
+
+# 海外服务与检测网站：具体域名优先于国内后缀
 host-suffix, google.com, 节点选择
 host-suffix, googleapis.com, 节点选择
 host-suffix, gstatic.com, 节点选择
@@ -37,6 +32,40 @@ host-suffix, twimg.com, 节点选择
 host-suffix, instagram.com, 节点选择
 host-suffix, facebook.com, 节点选择
 host-suffix, fbcdn.net, 节点选择
+host-suffix, google.cn, 节点选择
+host-suffix, google.com.cn, 节点选择
+host-suffix, google.com.hk, 节点选择
+host-suffix, google.com.tw, 节点选择
+host-suffix, google.co.jp, 节点选择
+host-suffix, google.co.uk, 节点选择
+host-suffix, youtube-nocookie.com, 节点选择
+host-suffix, telegram.me, 节点选择
+host-suffix, telegramcdn.org, 节点选择
+host-suffix, tdesktop.com, 节点选择
+host-suffix, telesco.pe, 节点选择
+host-suffix, github.io, 节点选择
+host-suffix, githubcopilot.com, 节点选择
+host-suffix, anthropic.com, 节点选择
+host-suffix, claude.ai, 节点选择
+host-suffix, netflix.com, 节点选择
+host-suffix, netflix.net, 节点选择
+host-suffix, nflxext.com, 节点选择
+host-suffix, nflximg.com, 节点选择
+host-suffix, nflximg.net, 节点选择
+host-suffix, nflxvideo.net, 节点选择
+host-suffix, nflxso.net, 节点选择
+host-suffix, disneyplus.com, 节点选择
+host-suffix, disney-plus.net, 节点选择
+host-suffix, dssott.com, 节点选择
+host-suffix, bamgrid.com, 节点选择
+host-suffix, spotify.com, 节点选择
+host-suffix, scdn.co, 节点选择
+host-suffix, spotifycdn.com, 节点选择
+host-suffix, ipleak.net, 节点选择
+host-suffix, dnsleaktest.com, 节点选择
+host-suffix, browserleaks.com, 节点选择
+
+# 已知国内服务直连
 host-suffix, cn, direct
 host-suffix, baidu.com, direct
 host-suffix, bdstatic.com, direct
@@ -67,5 +96,47 @@ host-suffix, netease.com, direct
 host-suffix, weibo.com, direct
 host-suffix, weibo.cn, direct
 host-suffix, sinaimg.cn, direct
+host-suffix, tenpay.com, direct
+host-suffix, pinduoduo.com, direct
+host-suffix, yangkeduo.com, direct
+host-suffix, pddpic.com, direct
+host-suffix, meituan.com, direct
+host-suffix, meituan.net, direct
+host-suffix, dianping.com, direct
+host-suffix, dpfile.com, direct
+host-suffix, dingtalk.com, direct
+host-suffix, iqiyi.com, direct
+host-suffix, iqiyipic.com, direct
+host-suffix, youku.com, direct
+host-suffix, ykimg.com, direct
+host-suffix, ximalaya.com, direct
+host-suffix, xmcdn.com, direct
+host-suffix, 126.com, direct
+host-suffix, netease.im, direct
+host-suffix, douban.com, direct
+host-suffix, doubanio.com, direct
+host-suffix, biliapi.com, direct
+host-suffix, biliapi.net, direct
+host-suffix, biliimg.com, direct
+host-suffix, acgvideo.com, direct
+
+# 未命中的域名交给节点，避免为下方 IP 分流触发本地解析。
+# 纯 IP 请求不会命中此条；未知国内域名和自定义内网域名需补充前置直连。
+host-keyword, ., 节点选择
+
+# 纯 IP 请求：内网直连，再判断国内 IP
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 192.168.0.0/16, direct
+ip-cidr, 100.64.0.0/10, direct
+ip-cidr, 169.254.0.0/16, direct
+ip-cidr, 224.0.0.0/4, direct
+ip6-cidr, ::1/128, direct
+ip6-cidr, fc00::/7, direct
+ip6-cidr, fe80::/10, direct
+ip6-cidr, ff00::/8, direct
 geoip, cn, direct
+
+# 其余纯 IP 请求使用节点
 final, 节点选择
