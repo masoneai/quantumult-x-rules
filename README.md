@@ -1,6 +1,6 @@
-# Quantumult X 三入口分流规则
+# Quantumult X 域名节点分流规则
 
-公开的规则与配置模板，不包含真实节点凭据或订阅地址。当前策略针对原用户的三个入口：`node.284021.xyz`、`183.223.134.233`、`223.160.186.152`。其他用户需替换节点 tag、策略组中的节点名称，以及对应的入口直连规则；两个 IP 是否可用取决于实际网络。
+公开的规则与配置模板，不包含真实节点凭据或订阅地址。当前策略使用原用户的域名节点 `node.284021.xyz`，节点名称为 `CF-域名直连`。其他用户需替换节点 tag、策略组中的节点名称，以及对应的域名入口直连规则。
 
 ## 新建配置
 
@@ -12,14 +12,14 @@
 
 ## 合并已有配置
 
-打开 [merge.conf](merge.conf)，将 `[policy]` 和 `[filter_local]` 的内容分别合并到现有同名区段，保留自己的 `[server_remote]`。检查重复规则与 `final` 兜底策略；默认选择域名入口，“自动测速”只比较配置中的三个入口。
+打开 [merge.conf](merge.conf)，将 `[policy]` 和 `[filter_local]` 的内容分别合并到现有同名区段，保留自己的 `[server_remote]`。检查重复规则与 `final` 兜底策略；`节点选择` 策略使用 `CF-域名直连`。
 
 ## 远程更新规则
 
 [rules.list](rules.list) 只含原生过滤规则。先从 `merge.conf` 合并 `[policy]` 策略组，再在自己的 `[filter_remote]` 区段加入：
 
 ```ini
-https://raw.githubusercontent.com/masoneai/quantumult-x-rules/main/rules.list, tag=三入口分流, enabled=true
+https://raw.githubusercontent.com/masoneai/quantumult-x-rules/main/rules.list, tag=域名节点分流, enabled=true
 ```
 
 不要加入 `force-policy`：它会覆盖列表中的 `direct`，导致原本直连的规则也使用指定策略。使用远程规则时，避免在 `[filter_local]` 重复加载同一套规则，并核对现有兜底规则。
