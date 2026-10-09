@@ -1,0 +1,75 @@
+# Quantumult X 基础广告域名屏蔽；50 条精选原生规则
+# 更新：2026-10-09；适用于“分流”模式；按需在本列表前增加域名放行。
+# Selected and adapted from SVE1R / Rules-For-Quantumult-X, MIT License.
+# Source: https://github.com/sve1r/Rules-For-Quantumult-X/blob/main/Rules/Advertising/AdReject.list
+# Reviewed source blob: ca5d7f8320430391de368a5d0ad3e3e9c45d4049
+# MIT License
+#
+# Copyright (c) 2020 SVE1R
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+host-suffix, doubleclick.net, reject
+host-suffix, googlesyndication.com, reject
+host-suffix, adnxs.com, reject
+host-suffix, adsrvr.org, reject
+host-suffix, adform.net, reject
+host-suffix, criteo.com, reject
+host-suffix, criteo.net, reject
+host-suffix, pubmatic.com, reject
+host-suffix, rubiconproject.com, reject
+host-suffix, casalemedia.com, reject
+host-suffix, amazon-adsystem.com, reject
+host-suffix, adcolony.com, reject
+host-suffix, applovin.com, reject
+host-suffix, applvn.com, reject
+host-suffix, ads-twitter.com, reject
+host-suffix, ad.qq.com, reject
+host, mobads.baidu.com, reject
+host, mobads-logs.baidu.com, reject
+host-suffix, cpro.baidu.com, reject
+host-suffix, eclick.baidu.com, reject
+host-suffix, union.baidu.com, reject
+host-suffix, afd.baidu.com, reject
+host-suffix, tanx.com, reject
+host-suffix, ad.xiaomi.com, reject
+host-suffix, ad.12306.cn, reject
+host-suffix, adse.ximalaya.com, reject
+host-suffix, pagead.google.com, reject
+host-suffix, pagead.l.google.com, reject
+host-suffix, pagead-tpc.l.google.com, reject
+host-suffix, adzerk.net, reject
+host-suffix, adtechjp.com, reject
+host-suffix, adtechus.com, reject
+host-suffix, admarket.mobi, reject
+host-suffix, adinfuse.com, reject
+host-suffix, appnext.com, reject
+host-suffix, api.appodeal.com, reject
+host-suffix, appodealx.com, reject
+host-suffix, chartboost.com, reject
+host-suffix, tapjoyads.com, reject
+host-suffix, vungle.com, reject
+host-suffix, vungle.cn, reject
+host-suffix, adchina.com, reject
+host-suffix, adpush.cn, reject
+host-suffix, googleadsserving.cn, reject
+host-suffix, cpro2.baidu.com, reject
+host-suffix, adsfile.bssdlbig.kugou.com, reject
+host-suffix, mobilead.kuwo.cn, reject
+host-suffix, ad.ximalaya.com, reject
+host-suffix, adweb.ximalaya.com, reject
+host-suffix, config.unityads.unity3d.com, reject
