@@ -6,6 +6,10 @@
 
 导入 [template.conf](template.conf)，把 `https://example.com/your-subscription` 换成自己的私人节点订阅，核对节点名称后选择“分流”模式。填写私人订阅后的配置请保留在本地。
 
+模板采用腾讯加密 DNS（`https://doh.pub/dns-query`），并通过 `no-system` 禁用系统 DNS。检测页面仍可能显示国内解析地址；此配置不保证所有 DNS 请求都经代理。
+
+节点订阅和分流规则订阅的更新不能修改主配置中的 DNS。应用此项变更时，请从远程完整配置下载／导入 [template.conf](https://raw.githubusercontent.com/masoneai/quantumult-x-rules/main/template.conf)，替换私人节点订阅地址后，将它应用为圈 X 主配置。
+
 ## 合并已有配置
 
 打开 [merge.conf](merge.conf)，将 `[policy]` 和 `[filter_local]` 的内容分别合并到现有同名区段，保留自己的 `[server_remote]`。检查重复规则与 `final` 兜底策略；默认选择域名入口，“自动测速”只比较配置中的三个入口。
